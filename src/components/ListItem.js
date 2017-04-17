@@ -38,8 +38,12 @@ const styles = {
 }
 
 
+const mapStateToProps = state -> {
+	return { selectedLibraryId: state.selectedLibraryId };
+	
+}
 
-export default connect(null, actions)(ListItem);
+export default connect(mapStateToProps, actions)(ListItem);
 
 // take my action creators and pass them all down into the component as props //
 // purpose of mapDispatchToProps is to bindall of the action creators ie select a list item action creator which is a function that calls an action to listitem componen
