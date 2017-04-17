@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { ListView } from 'react-native';
 import { connect } from 'react-redux';
+import ListItem from './ListItem.js';
 
 // the instant the component renders we can tell listview where to get its data from 
 
@@ -9,9 +10,13 @@ class LibraryList extends Component {
 	componentWillMount() {
 		const ds = new ListView.DataSource({
 			rowHasChanged: (r1, r2) => r1 !== r2			
-		});]
+		});
 
 		this.dataSource = ds.cloneWithRows(this.props.libraries);
+	}
+
+	renderRow(library){
+		return <ListItem library={library} />;
 	}
 	render() {
 		return(

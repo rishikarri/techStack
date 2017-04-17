@@ -7,11 +7,12 @@ import { Header } from './components/common/index.js';
 import LibraryList from './components/LibraryList.js'
 
 
+// need to pass style a property of flex 1 so that we it takes up the full length of the screen 
 
 const App = () => {
 	return (
 		<Provider store={createStore(reducers)}> 
-			<View>
+			<View style={{flex: 1}}>
 				<Header headerText="Tech Stack" />
 				<LibraryList />
 			</View >
